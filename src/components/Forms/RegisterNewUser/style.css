@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+.App{
+
+}
+
+#form-cadastro-usuario{
+    width: 25vw;
+}
+
+#botao-cancelar{
+    float: left;
+}
+
+#botao-cadastrar{
+    float: right;
+}
+

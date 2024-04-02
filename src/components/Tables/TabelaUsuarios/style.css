@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+#tabela-usuarios{
+    background-color: snow;
+    width: 100vw;
+}
+
+#container-tabela-usuarios-linha-2{
+    float: right
+}
+
+#tabela-usuarios-coluna-botoes{
+    display: flex;
+    justify-content: space-around;
+}
