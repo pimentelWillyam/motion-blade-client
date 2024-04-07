@@ -1,8 +1,9 @@
 import './LoginForm.css'
 
-import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { handleLoginSubmission } from '../../../handlers/handleLoginSubmission';
+import SubmitLoginButton from '../../Buttons/SubmitLoginButton/SubmitLoginButton';
+import RegisterNewUserButton from '../../Buttons/RegisterNewUserButton/RegisterNewUserButton';
 
 function LoginForm() {
   return (
@@ -14,9 +15,8 @@ function LoginForm() {
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Control type="password" placeholder="Insira sua senha" />
         </Form.Group>
-        <Button id = "submission-button" variant="primary" type="submit">
-        Entrar
-      </Button>
+        <RegisterNewUserButton /> <SubmitLoginButton />
+        
     </Form>
     </div>
     
