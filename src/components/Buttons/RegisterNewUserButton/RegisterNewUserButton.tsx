@@ -1,7 +1,8 @@
+import Button from 'react-bootstrap/Button'
 import './RegisterNewUserButton.css'
 function RegisterNewUserButton() {
   return (
-    <div id="register-new-user-button">Oi</div>
+    <Button variant='success'>Cadastrar</Button>
       
   )
 }
