@@ -5,6 +5,7 @@ import { RegisterNewUserPage } from "./pages/RegisterNewUserPage/RegisterNewUser
 import { RegisterNewServantPage } from "./pages/RegisterServantPage/RegisterNewServantPage";
 import { RegisterNewBattlePage } from "./pages/RegisterBattlePage/RegisterBattlePage";
 import MyServantsPage from "./pages/MyServantsPage/MyServantsPage";
+import BattlesPage from "./pages/BattlesPage/BattlesPage";
 
 const router = createBrowserRouter([
   {path: '/', element: <LoginPage/>},
@@ -13,7 +14,7 @@ const router = createBrowserRouter([
   {path: '/cadastrar-servo', element: <RegisterNewServantPage/>},
   {path: '/meus-servos', element: <MyServantsPage/>},
   {path: '/cadastrar-batalha', element: <RegisterNewBattlePage/>},
-  {path: '/batalhas', element: <HomePage/>},
+  {path: '/batalhas', element: <BattlesPage/>},
 
 
 
