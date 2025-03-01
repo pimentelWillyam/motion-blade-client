@@ -1,0 +1,15 @@
+#loading-modal .modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#loading-modal .spinner-border {
+  margin-bottom: 10px;
+}
+
+#loading-modal .modal-body div {
+  font-size: 1.2em;
+  font-weight: bold;
+}
