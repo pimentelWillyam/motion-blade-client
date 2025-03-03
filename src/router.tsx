@@ -6,20 +6,17 @@ import { RegisterNewServantPage } from "./pages/RegisterServantPage/RegisterNewS
 import { RegisterNewBattlePage } from "./pages/RegisterBattlePage/RegisterBattlePage";
 import MyServantsPage from "./pages/MyServantsPage/MyServantsPage";
 import BattlesPage from "./pages/BattlesPage/BattlesPage";
+import {BattlePage} from "./pages/BattlePage/BattlePage";
 
 const router = createBrowserRouter([
-  {path: '/', element: <LoginPage/>},
-  {path: '/cadastrar-usuario', element: <RegisterNewUserPage/>},
-  {path: '/home', element: <HomePage/>},
-  {path: '/cadastrar-servo', element: <RegisterNewServantPage/>},
-  {path: '/meus-servos', element: <MyServantsPage/>},
-  {path: '/cadastrar-batalha', element: <RegisterNewBattlePage/>},
-  {path: '/batalhas', element: <BattlesPage/>},
+  { path: "/", element: <LoginPage /> },
+  { path: "/cadastrar-usuario", element: <RegisterNewUserPage /> },
+  { path: "/home", element: <HomePage /> },
+  { path: "/cadastrar-servo", element: <RegisterNewServantPage /> },
+  { path: "/meus-servos", element: <MyServantsPage /> },
+  { path: "/cadastrar-batalha", element: <RegisterNewBattlePage /> },
+  { path: "/batalhas", element: <BattlesPage /> },
+  { path: "/batalha/:name", element: <BattlePage /> }
+]);
 
-
-
-
-])
-
-export { router }
-
+export { router };
