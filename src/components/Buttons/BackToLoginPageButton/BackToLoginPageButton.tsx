@@ -1,9 +1,11 @@
 import Button from 'react-bootstrap/Button'
 import './BackToLoginPageButton.css'
+import { useNavigate } from 'react-router-dom'
 
 function BackToLoginPageButton() {
+    const navigate = useNavigate()
   return (
-    <Button href='/' id = "back-to-login-page-button" variant="warning" type="submit"> Voltar </Button>
+    <Button onClick={() => navigate('/')}  variant="warning" type="submit"> Voltar </Button>
       
   )
 }
