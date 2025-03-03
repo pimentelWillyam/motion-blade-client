@@ -8,20 +8,18 @@ import SubmitRegisterButton from '../../Buttons/SubmitRegisterButton/SubmitRegis
 
 function RegisterNewUserForm(props: {setIsLoadingModal: React.Dispatch<React.SetStateAction<boolean>>, setShowUserRegisteredToast: React.Dispatch<React.SetStateAction<boolean>>, setShowUserRegistryFailToast: React.Dispatch<React.SetStateAction<boolean>>, }) {
   const [userName, setUserName] = useState('');
-  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatedPassword, setRepeatedPassword] = useState('');
 
   const clearUserForm = () => {
     setUserName('');
-    setEmail('');
     setPassword('');
     setRepeatedPassword('');
   }
 
   return (
     <div id="register-new-user-form">
-      <Form onSubmit={event => void handleRegisterSubmission(event, userName, email, password, repeatedPassword, clearUserForm, props.setIsLoadingModal, props.setShowUserRegisteredToast, props.setShowUserRegistryFailToast)}>
+      <Form onSubmit={event => void handleRegisterSubmission(event, userName, password, repeatedPassword, clearUserForm, props.setIsLoadingModal, props.setShowUserRegisteredToast, props.setShowUserRegistryFailToast)}>
         <Form.Group className="mb-3" controlId="formBasicUserName">
           <Form.Control 
             type="text" 
@@ -30,14 +28,7 @@ function RegisterNewUserForm(props: {setIsLoadingModal: React.Dispatch<React.Set
             onChange={e => setUserName(e.target.value)}
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Control 
-            type="email" 
-            placeholder="Insira seu email" 
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-          />
-        </Form.Group>
+        
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Control 
             type="password" 
