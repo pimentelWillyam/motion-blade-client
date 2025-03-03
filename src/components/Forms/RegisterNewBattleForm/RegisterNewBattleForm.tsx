@@ -1,49 +1,68 @@
-import './RegisterNewBattleForm.css'
-
-import Form from 'react-bootstrap/Form'
-import { handleRegisterSubmission } from '../../../handlers/handleRegisterSubmission';
-import BackToLoginPageButton from '../../Buttons/BackToLoginPageButton/BackToLoginPageButton';
+import { useState } from 'react';
+import './RegisterNewBattleForm.css';
+import Form from 'react-bootstrap/Form';
 import SubmitRegisterButton from '../../Buttons/SubmitRegisterButton/SubmitRegisterButton';
+import BackToHomePageButton from '../../Buttons/BackToHomePageButton/BackToHomePageButton';
+import { handleRegistryNewBattleFormSubmission } from '../../../handlers/handleRegistryNewBattleFormSubmission';
 
-function RegisterNewUserForm() {
+function RegisterNewBattleForm(props: {
+  setIsLoadingModal: React.Dispatch<React.SetStateAction<boolean>>
+  setShowBattleRegisteredToast: React.Dispatch<React.SetStateAction<boolean>>
+  setShowBattleRegistryFailToast: React.Dispatch<React.SetStateAction<boolean>>
+}) {
+  const [battleName, setBattleName] = useState('');
+  const [maxMasters, setMaxMasters] = useState('');
+  const [maxServants, setMaxServants] = useState('');
+
+  const clearBattleForm = () => {
+    setBattleName('');
+    setMaxMasters('');
+    setMaxServants('');
+  };
+
   return (
     <div id="register-new-battle-form">
-      <Form onSubmit={void handleRegisterSubmission()}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Control type="email" placeholder="Insira o nome da batalha" />
+      <Form
+        onSubmit={(event) =>
+          handleRegistryNewBattleFormSubmission(
+            event, battleName, clearBattleForm, props.setIsLoadingModal, props.setShowBattleRegisteredToast, props.setShowBattleRegistryFailToast
+          )
+        }
+      >
+        <Form.Group className="mb-3" controlId="battleName">
+          <Form.Control
+            type="text"
+            placeholder="Insira o nome da batalha"
+            value={battleName}
+            onChange={(e) => setBattleName(e.target.value)}
+          />
         </Form.Group>
-        <Form.Select >
-          <option>Selecione a quantidade máxima de Mestres nessa batalha</option>
-          <option >2</option>
-          <option >3</option>
-          <option >4</option>
-          <option >5</option>
-          <option >6</option>
-          <option >7</option>
-          <option >8</option>
-          <option >9</option>
-          <option >10</option>
+
+        <Form.Select value={maxMasters} onChange={(e) => setMaxMasters(e.target.value)}>
+          <option value="">Selecione a quantidade máxima de Mestres nessa batalha</option>
+          {[...Array(9)].map((_, i) => (
+            <option key={i} value={i + 2}>
+              {i + 2}
+            </option>
+          ))}
         </Form.Select>
         <br />
-        <Form.Select >
-          <option>Selecione a quantidade máxima de Servos nessa batalha</option>
-          <option >2</option>
-          <option >3</option>
-          <option >4</option>
-          <option >5</option>
-          <option >6</option>
-          <option >7</option>
-          <option >8</option>
-          <option >9</option>
-          <option >10</option>
+
+        <Form.Select value={maxServants} onChange={(e) => setMaxServants(e.target.value)}>
+          <option value="">Selecione a quantidade máxima de Servos nessa batalha</option>
+          {[...Array(9)].map((_, i) => (
+            <option key={i} value={i + 2}>
+              {i + 2}
+            </option>
+          ))}
         </Form.Select>
         <br />
         <br />
-       <BackToLoginPageButton /> <SubmitRegisterButton />
-    </Form>
+
+        <BackToHomePageButton /> <SubmitRegisterButton />
+      </Form>
     </div>
-    
-  )
+  );
 }
 
-export default RegisterNewUserForm;
+export default RegisterNewBattleForm;
