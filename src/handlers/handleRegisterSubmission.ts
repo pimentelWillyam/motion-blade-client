@@ -1,11 +1,10 @@
 import axios from 'axios';
 
-const handleRegisterSubmission = async (event: React.FormEvent<HTMLFormElement>, userName: string, email: string, password: string, repeatedPassword: string, clearUserForm: () => void, setIsLoadingModal: React.Dispatch<React.SetStateAction<boolean>>, setShowUserRegisteredToast: React.Dispatch<React.SetStateAction<boolean>>, setShowUserRegistryFailToast: React.Dispatch<React.SetStateAction<boolean>>) => {
+const handleRegisterSubmission = async (event: React.FormEvent<HTMLFormElement>, userName: string, password: string, repeatedPassword: string, clearUserForm: () => void, setIsLoadingModal: React.Dispatch<React.SetStateAction<boolean>>, setShowUserRegisteredToast: React.Dispatch<React.SetStateAction<boolean>>, setShowUserRegistryFailToast: React.Dispatch<React.SetStateAction<boolean>>) => {
   event.preventDefault();
   const data = {
     login: userName,
     password: password,
-    email: email,
   };
   try {
     setIsLoadingModal(true)
