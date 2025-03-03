@@ -1,38 +1,64 @@
-import './RegisterNewServantForm.css'
-
-import Form from 'react-bootstrap/Form'
-import { handleRegisterSubmission } from '../../../handlers/handleRegisterSubmission';
+import './RegisterNewServantForm.css';
+import Form from 'react-bootstrap/Form';
+import { useState } from 'react';
+import { handleRegistryNewServantFormSubmission } from '../../../handlers/handleRegistryNewServantFormSubmission';
 import SubmitServantRegistryButton from '../../Buttons/SubmitServantRegistryButton/SubmitServantRegistryButton';
 import BackToHomePageButton from '../../Buttons/BackToHomePageButton/BackToHomePageButton';
+import { professions } from '../../../constants/professions';
 
-function RegisterNewUserForm() {
+function RegisterNewServantForm(props: {setIsLoadingModal: React.Dispatch<React.SetStateAction<boolean>>, setShowServantRegisteredToast: React.Dispatch<React.SetStateAction<boolean>>, setShowServantRegistryFailToast: React.Dispatch<React.SetStateAction<boolean>>, }) {
+  const [servantName, setServantName] = useState('');
+  const [servantSex, setServantSex] = useState('');
+  const [fatherProfession, setFatherProfession] = useState('');
+  const [servantProfession, setServantProfession] = useState('');
+
+  const clearServantForm = () => {
+    setServantName('');
+    setServantSex('');
+    setFatherProfession('');
+    setServantProfession('');
+  };
+
   return (
     <div id="register-new-servant-form">
-      <Form onSubmit={void handleRegisterSubmission()}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Control type="email" placeholder="Insira o nome do servo" />
+      <Form onSubmit={event => handleRegistryNewServantFormSubmission(event, servantName, servantSex, fatherProfession, servantProfession, clearServantForm, props.setIsLoadingModal, props.setShowServantRegisteredToast, props.setShowServantRegistryFailToast)}>
+        <Form.Group className="mb-3" controlId="formServantName">
+          <Form.Control
+            type="text"
+            placeholder="Insira o nome do servo"
+            value={servantName}
+            onChange={(e) => setServantName(e.target.value)}
+          />
         </Form.Group>
-        <Form.Select >
-          <option>Selecione o sexo do seu servo</option>
-          <option >Masculino</option>
-          <option >Feminino</option>
+
+        <Form.Select value={servantSex} onChange={(e) => setServantSex(e.target.value)}>
+          <option value="">Selecione o sexo do seu servo</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Feminino">Feminino</option>
         </Form.Select>
         <br />
-        <Form.Select >
-          <option>Selecione a profissão do pai de seu servo</option>
-          <option >PJES</option>
+
+        <Form.Select value={fatherProfession} onChange={(e) => setFatherProfession(e.target.value)}>
+          <option value="">Selecione a profissão do pai de seu servo</option>
+          {professions.map((profession) => (
+            <option key={profession} value={profession}>{profession}</option>
+          ))}
         </Form.Select>
         <br />
-        <Form.Select >
-          <option>Selecione a profissão do seu servo</option>
-          <option >PJES</option>
+
+        <Form.Select value={servantProfession} onChange={(e) => setServantProfession(e.target.value)}>
+          <option value="">Selecione a profissão do seu servo</option>
+          {professions.map((profession) => (
+            <option key={profession} value={profession}>{profession}</option>
+          ))}
         </Form.Select>
         <br />
-       <BackToHomePageButton /> <SubmitServantRegistryButton />
-    </Form>
+
+        <BackToHomePageButton /> 
+        <SubmitServantRegistryButton />
+      </Form>
     </div>
-    
-  )
+  );
 }
 
-export default RegisterNewUserForm;
+export default RegisterNewServantForm;
