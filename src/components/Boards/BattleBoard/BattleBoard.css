@@ -1,0 +1,22 @@
+/* BattleBoard.css */
+table {
+  width: 100%; /* Ajusta a largura total da tabela */
+  margin-top: 5%
+}
+
+td, th {
+  width: 7.5vw; /* Define a largura de cada célula */
+  height: 7.5vh; /* Define a altura de cada célula */
+  text-align: center; /* Centraliza o conteúdo */
+}
+
+/* Alterna as cores das células para o efeito de tabuleiro */
+tr:nth-child(even) td:nth-child(odd),
+tr:nth-child(odd) td:nth-child(even) {
+  background-color: #b58863; /* Cor escura do tabuleiro */
+}
+
+tr:nth-child(even) td:nth-child(even),
+tr:nth-child(odd) td:nth-child(odd) {
+  background-color: #f0d9b5; /* Cor clara do tabuleiro */
+}
