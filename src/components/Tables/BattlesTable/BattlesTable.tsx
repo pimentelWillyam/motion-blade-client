@@ -1,7 +1,27 @@
+import { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
 import EnterBattleButton from '../../Buttons/EnterBattleButton/EnterBattleButton';
+import axios from 'axios';
+import DatabaseBattle from '../../../models/DatabaseBattle';
+
+
 
 function BattlesTable() {
+  const [battles, setBattles] = useState<DatabaseBattle[]>([]);
+
+  useEffect(() => {
+    const fetchBattles = async () => {
+      try {
+        const response = await axios.get('http://localhost:4000/api/battle')
+        setBattles(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchBattles();
+  }, []);
+
   return (
     <Table striped bordered hover>
       <thead>
@@ -9,33 +29,28 @@ function BattlesTable() {
           <th>#</th>
           <th>Nome</th>
           <th>Quantidade de Mestres</th>
-          <th>Quantidade Servos</th>
+          <th>Quantidade de Servos</th>
           <th>Fase da batalha</th>
           <th></th>
-
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Guararapes</td>
-          <td>0/10</td>
-          <td>0/10</td>
-          <td>Preparação</td>
-          <td><EnterBattleButton /></td>
-
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <td>2</td>
-          <td>Aljubarrota</td>
-          <td>2/10</td>
-          <td>4/10</td>
-          <td>Combate</td>
-          <td><EnterBattleButton /></td>
-
-        </tr>
+        {battles.map((battle, index) => (
+          <tr key={battle.id}>
+            <td>{index + 1}</td>
+            <td>{battle.name}</td>
+            <td>
+              {battle.participants_name_list}/{}
+            </td>
+            <td>
+              {}/{}
+            </td>
+            <td>{}</td>
+            <td>
+              <EnterBattleButton nomeBatalha={battle.name} />
+            </td>
+          </tr>
+        ))}
       </tbody>
     </Table>
   );
