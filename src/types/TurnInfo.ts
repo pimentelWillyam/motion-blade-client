@@ -1,4 +1,4 @@
-import { type Servant } from '../../factories/ServantFactory'
+import { Servant } from "./Servant"
 
 interface TurnInfo {
   servantsYetToPlay: Servant[] | undefined
