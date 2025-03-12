@@ -1,15 +1,23 @@
-import DatabaseBattle from "../../../models/DatabaseBattle";
-import "./BattleBoard.css";
-import Table from "react-bootstrap/Table";
+import './BattleBoard.css'
+import { Table } from "react-bootstrap";
+import { Battle } from '../../../types/Battle';
+import { SelectedAction } from '../../../types/SelectedAction';
+import { handleBoardCellClick } from '../../../handlers/handleBoardCellClick';
+import { Servant } from '../../../types/Servant';
 
-export default function BattleBoard(props: { battle: DatabaseBattle }) {
+export default function BattleBoard(props: { battle: Battle, selectedServant: Servant | null, setSelectedServant: React.Dispatch<React.SetStateAction<Servant | null>>, selectedAction: SelectedAction | null, setSelectedAction: React.Dispatch<React.SetStateAction<SelectedAction | null>>}) {
     return (
-        <Table bordered hover>
+        <Table className="battle-board" bordered>
             <tbody>
                 {props.battle.map.map((row, rowIndex) => (
                     <tr key={rowIndex}>
                         {row.map((cell, colIndex) => (
-                            <td onClick={() => console.log(`clicou na coluna ${colIndex} e na lina ${rowIndex}`)} key={colIndex}>{cell}</td>
+                            <td 
+                                onClick={() =>  handleBoardCellClick(props.selectedAction, props.setSelectedAction, props.selectedServant, props.setSelectedServant, props.battle.name, rowIndex, colIndex)} 
+                                key={colIndex}
+                            >
+                                {cell}
+                            </td>
                         ))}
                     </tr>
                 ))}
@@ -17,3 +25,4 @@ export default function BattleBoard(props: { battle: DatabaseBattle }) {
         </Table>
     );
 }
+
