@@ -15,15 +15,6 @@ const RegisterNewUserPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [showUserRegisteredToast, setShowUserRegisteredToast] = useState(false);
   const [showUserRegistryFailToast, setShowUserRegistryFailToast] = useState(false);
-  
-  useEffect(() => {
-      const login = localStorage.getItem("login")
-      const token = localStorage.getItem("token")
-  
-      if (!login && !token ) {
-        navigate("/");
-      }
-    }, []);
 
   return (
     <Container id = 'register-user-page'>
