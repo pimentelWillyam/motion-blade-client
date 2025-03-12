@@ -2,8 +2,8 @@ import './RegisterNewServantForm.css';
 import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
 import { handleRegistryNewServantFormSubmission } from '../../../handlers/handleRegistryNewServantFormSubmission';
-import SubmitServantRegistryButton from '../../Buttons/SubmitServantRegistryButton/SubmitServantRegistryButton';
-import BackToHomePageButton from '../../Buttons/BackToHomePageButton/BackToHomePageButton';
+import SubmitServantRegistryButton from '../../Buttons/SubmitServantRegistryButton';
+import BackToHomePageButton from '../../Buttons/BackToHomePageButton';
 import { professions } from '../../../constants/professions';
 
 function RegisterNewServantForm(props: {setIsLoadingModal: React.Dispatch<React.SetStateAction<boolean>>, setShowServantRegisteredToast: React.Dispatch<React.SetStateAction<boolean>>, setShowServantRegistryFailToast: React.Dispatch<React.SetStateAction<boolean>>, }) {

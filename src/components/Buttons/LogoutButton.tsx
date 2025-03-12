@@ -1,12 +1,6 @@
-import './LogoutButton.css'
-
-
 import Button from 'react-bootstrap/Button';
-
-
-
 import { useNavigate } from 'react-router-dom';
-import { handleLogout } from '../../../handlers/handleLogout';
+import { handleLogout } from '../../handlers/handleLogout';
 
 function LogoutButton() {
   const navigate = useNavigate()

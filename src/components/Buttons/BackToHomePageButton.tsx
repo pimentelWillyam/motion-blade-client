@@ -1,5 +1,4 @@
 import Button from 'react-bootstrap/Button'
-import './BackToHomePageButton.css'
 import { useNavigate } from 'react-router-dom'
 
 function BackToHomePageButton() {

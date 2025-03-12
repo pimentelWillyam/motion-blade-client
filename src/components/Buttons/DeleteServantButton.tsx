@@ -1,5 +1,4 @@
 import Button from 'react-bootstrap/Button'
-import './DeleteServantButton.css'
 
 function DeleteServantButton(props: {onClick?: () => void}) {
   return (

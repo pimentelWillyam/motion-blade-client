@@ -3,8 +3,8 @@ import './LoginForm.css'
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import { handleLoginSubmission } from '../../../handlers/handleLoginSubmission';
-import SubmitLoginButton from '../../Buttons/SubmitLoginButton/SubmitLoginButton';
-import RegisterNewUserButton from '../../Buttons/RegisterNewUserButton/RegisterNewUserButton';
+import SubmitLoginButton from '../../Buttons/SubmitLoginButton';
+import RegisterNewUserButton from '../../Buttons/RegisterNewUserButton';
 import { useNavigate } from 'react-router-dom';
 
 function LoginForm(props: { setShowLoadingModal: React.Dispatch<React.SetStateAction<boolean>>, setLoginErrorModal: React.Dispatch<React.SetStateAction<boolean>> }) {

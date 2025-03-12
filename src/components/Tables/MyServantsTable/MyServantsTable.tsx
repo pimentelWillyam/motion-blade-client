@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
-import VisualizeAttributesButton from '../../Buttons/VisualizeAttributesButton/VisualizeServantDetailsButton';
+import VisualizeAttributesButton from '../../Buttons/VisualizeServantDetailsButton';
 import DatabaseServant from '../../../models/DatabaseServant';
 import axios from 'axios';
-import DeleteServantButton from '../../Buttons/DeleteServantButton/DeleteServantButton';
+import DeleteServantButton from '../../Buttons/DeleteServantButton';
 import { handleServantDeletion } from '../../../handlers/handleServantDeletion';
 
 function MyServantsTable(props: {setIsLoadingModal, setSuccessToast, setFailureToast}) {

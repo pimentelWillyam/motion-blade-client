@@ -1,5 +1,4 @@
 import Button from 'react-bootstrap/Button'
-import './RegisterNewUserButton.css'
 import { useNavigate } from 'react-router-dom'
 
 function RegisterNewUserButton() {

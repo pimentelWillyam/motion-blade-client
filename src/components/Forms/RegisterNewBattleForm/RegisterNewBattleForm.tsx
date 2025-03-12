@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './RegisterNewBattleForm.css';
 import Form from 'react-bootstrap/Form';
-import SubmitRegisterButton from '../../Buttons/SubmitRegisterButton/SubmitRegisterButton';
-import BackToHomePageButton from '../../Buttons/BackToHomePageButton/BackToHomePageButton';
+import SubmitRegisterButton from '../../Buttons/SubmitRegisterButton';
+import BackToHomePageButton from '../../Buttons/BackToHomePageButton';
 import { handleRegistryNewBattleFormSubmission } from '../../../handlers/handleRegistryNewBattleFormSubmission';
 
 function RegisterNewBattleForm(props: {

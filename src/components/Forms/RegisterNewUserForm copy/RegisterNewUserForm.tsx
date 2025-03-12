@@ -2,8 +2,8 @@ import './RegisterNewUserForm.css'
 
 import Form from 'react-bootstrap/Form'
 import { handleRegisterSubmission } from '../../../handlers/handleRegisterSubmission';
-import BackToLoginPageButton from '../../Buttons/BackToLoginPageButton/BackToLoginPageButton';
-import SubmitRegisterButton from '../../Buttons/SubmitRegisterButton/SubmitRegisterButton';
+import BackToLoginPageButton from '../../Buttons/BackToLoginPageButton';
+import SubmitRegisterButton from '../../Buttons/SubmitRegisterButton';
 
 function RegisterNewUserForm() {
   return (

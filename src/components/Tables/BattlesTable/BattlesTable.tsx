@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
-import EnterBattleButton from '../../Buttons/EnterBattleButton/EnterBattleButton';
+import EnterBattleButton from '../../Buttons/EnterBattleButton';
 import axios from 'axios';
 import DatabaseBattle from '../../../models/DatabaseBattle';
 

@@ -1,5 +1,4 @@
 import Button from 'react-bootstrap/Button'
-import './EnterBattleButton.css'
 import { useNavigate } from 'react-router-dom'
 function EnterBattleButton(props: {nomeBatalha: string}) {
   const navigate = useNavigate()

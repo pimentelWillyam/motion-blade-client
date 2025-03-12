@@ -1,5 +1,4 @@
 import Button from 'react-bootstrap/Button'
-import './VisualizeServantDetailsButton.css'
 import { useNavigate } from 'react-router-dom'
 
 function VisualizeServantDetailsButton(props: {servantName: string}) {
