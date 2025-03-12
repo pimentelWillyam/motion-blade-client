@@ -1,9 +1,8 @@
-import type Chainmail from '../model/armors/Chainmail'
-import type Cloth from '../model/armors/Cloth'
-import type Leather from '../model/armors/Leather'
-import type Plate from '../model/armors/Plate'
-import type Pleather from '../model/armors/Pleather'
+import ArmorType from "./ArmorType"
 
-type Armor = Chainmail | Cloth | Leather | Plate | Pleather
-
-export default Armor
+ export type Armor = {
+  readonly type: ArmorType
+  readonly debuff: number
+  condition: number
+  readonly maximumCondition: number
+  }
