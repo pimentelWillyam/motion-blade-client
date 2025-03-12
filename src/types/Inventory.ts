@@ -1,5 +1,5 @@
-import type { Armor } from '../../factories/ArmorFactory'
-import type { Weapon } from '../../factories/WeaponFactory'
+import { Armor } from "./Armor"
+import { Weapon } from "./Weapon"
 
 interface Inventory {
   primaryArmor: Armor
