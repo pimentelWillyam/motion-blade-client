@@ -1,5 +1,5 @@
 interface BattleInfo {
-  battleId: number
+  battleId: string
   isInBattle: boolean
   battleName: string
   horizontalPosition: number
