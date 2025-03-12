@@ -1,10 +1,11 @@
 import axios from "axios";
 
-const handleServantDeletion = async  (servantName: string,  setIsLoadingModal: React.Dispatch<React.SetStateAction<boolean>>, setSucessToast: React.Dispatch<React.SetStateAction<boolean>>, setFailureToast: React.Dispatch<React.SetStateAction<boolean>>) => {
+const handleServantDeletion = async  (servantName: string,  setIsLoadingModal: React.Dispatch<React.SetStateAction<boolean>>, fetchServants: () => Promise<void>, setSucessToast: React.Dispatch<React.SetStateAction<boolean>>, setFailureToast: React.Dispatch<React.SetStateAction<boolean>>) => {
   try {
     setIsLoadingModal(true)
     const response = await axios.delete(`http://localhost:4000/api/servant/${servantName}`);
     if (response.status === 200) {
+      await fetchServants()
       setIsLoadingModal(false)
       setSucessToast(true)
     }
