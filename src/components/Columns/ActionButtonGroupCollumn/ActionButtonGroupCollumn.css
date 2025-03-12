@@ -1,0 +1,65 @@
+#servant-insertion-button-container {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  height: 100%; /* Garante que o container ocupe toda a altura disponível */
+  width: 100%; /* Garante que o container ocupe toda a largura disponível */
+  text-align: center; /* Alinha o texto ao centro */
+}
+
+
+#servant-insertion-paragraph-container {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  height: 100%; /* Garante que o container ocupe toda a altura disponível */
+  width: 100%; /* Garante que o container ocupe toda a largura disponível */
+  text-align: center; /* Alinha o texto ao centro */
+}
+
+#action-button-group-collum {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#action-button-group-collum .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Espaçamento entre a primeira e a segunda Row */
+#action-button-group-collum .mb-4 {
+  margin-bottom: 40px;
+}
+
+/* Centralizando as setas em formato de gamepad */
+.arrow-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0; /* Espaço entre as linhas de setas */
+}
+
+.arrow-row .col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Espaçamento entre as setas */
+.arrow-row .col > * {
+  margin: 0 25px; /* Espaçamento horizontal entre as setas */
+}
+
+#action-button-group-collum .d-flex.justify-content-center {
+  justify-content: center;
+}
+
+#action-button-group-collum .d-flex.align-items-center {
+  align-items: center;
+}
