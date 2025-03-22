@@ -3,12 +3,12 @@ import { Servant } from "../../types/Servant";
 import { useEffect } from "react";
 
 const CenteredContainer = styled.div`
+  margin-top: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-`;
+  text-align: center;`;
 
 export function SelectedServantColumn(props: { selectedServant: Servant | null }) {
   useEffect(() => {
@@ -32,6 +32,10 @@ export function SelectedServantColumn(props: { selectedServant: Servant | null }
       <p>armadura primária: {props.selectedServant.inventory.primaryArmor.type}</p>
       <p>armadura secundária: {props.selectedServant.inventory.secondaryArmor.type}</p>
       <p>armadura: {props.selectedServant.inventory.secondaryArmor.type}</p>
+      <p></p>
+      <p>eixo x: {props.selectedServant.battleInfo.horizontalPosition}</p>
+      <p>eixo y: {props.selectedServant.battleInfo.verticalPosition}</p>
+
     </CenteredContainer>
   );
 }

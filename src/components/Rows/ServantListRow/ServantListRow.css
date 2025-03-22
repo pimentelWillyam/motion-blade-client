@@ -1,7 +1,0 @@
-#servant-list {
-  display: flex;
-  flex-direction: row; /* Organiza os itens em uma linha */
-  gap: 2px; /* Espaçamento entre os quadrados reduzido para 2px */
-  justify-content: center; /* Centraliza os itens horizontalmente */
-  overflow-x: auto; /* Permite rolar horizontalmente se os itens ultrapassarem a tela */
-}

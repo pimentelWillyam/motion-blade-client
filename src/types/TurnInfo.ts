@@ -1,8 +1,6 @@
-import { Servant } from "./Servant"
-
 interface TurnInfo {
-  servantsYetToPlay: Servant[] | undefined
-  servantAboutToPlay: Servant | undefined
+  servantsYetToPlay: string[]
+  servantAboutToPlay: string
 
 }
 

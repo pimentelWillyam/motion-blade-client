@@ -1,23 +1,72 @@
 import { Toast } from 'react-bootstrap';
-import { CheckCircle, X } from 'lucide-react'; // Ícones
-import './UserRegisteredToast.css';
+import { CheckCircle, X } from 'lucide-react';
+import styled from 'styled-components';
 
-function UserRegisteredToast({ show, onClose }: { show: boolean, onClose: () => void }) {
+interface UserRegisteredToastProps {
+  show: boolean;
+  onClose: () => void;
+}
+
+const StyledToast = styled(Toast)`
+  background-color: #e9f5ec !important;
+  border-left: 5px solid #2d6a4f;
+  color: #155724;
+  padding: 12px;
+  border-radius: 6px;
+  min-width: 320px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+`;
+
+const ToastContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+`;
+
+const ToastIcon = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const SuccessToastText = styled.div`
+  flex-grow: 1;
+  p {
+    margin: 0;
+    font-size: 14px;
+    color: #155724 !important;
+  }
+`;
+
+const ToastCloseButton = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #155724;
+  padding: 5px;
+
+  &:hover {
+    color: #0c3e26;
+  }
+`;
+
+function UserRegisteredToast({ show, onClose }: UserRegisteredToastProps) {
   return (
-    <Toast show={show} onClose={onClose} delay={3000} autohide className="custom-toast-success">
-      <div className="toast-content">
-        <div className="toast-icon">
+    <StyledToast show={show} onClose={onClose} delay={3000} autohide>
+      <ToastContent>
+        <ToastIcon>
           <CheckCircle size={20} color="#2d6a4f" />
-        </div>
-        <div className="success-toast-text">
+        </ToastIcon>
+        <SuccessToastText>
           <strong>Sucesso</strong>
           <p>Usuário registrado com sucesso.</p>
-        </div>
-        <button className="toast-close" onClick={onClose}>
+        </SuccessToastText>
+        <ToastCloseButton onClick={onClose}>
           <X size={18} />
-        </button>
-      </div>
-    </Toast>
+        </ToastCloseButton>
+      </ToastContent>
+    </StyledToast>
   );
 }
 

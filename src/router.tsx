@@ -1,13 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
-import LoginPage from "./pages/LoginPage/LoginPage";
-import HomePage from "./pages/HomePage/HomePage";
-import { RegisterNewUserPage } from "./pages/RegisterNewUserPage/RegisterNewUserPage";
-import { RegisterNewServantPage } from "./pages/RegisterServantPage/RegisterNewServantPage";
-import { RegisterNewBattlePage } from "./pages/RegisterBattlePage/RegisterBattlePage";
-import MyServantsPage from "./pages/MyServantsPage/MyServantsPage";
-import BattlesPage from "./pages/BattlesPage/BattlesPage";
-import {BattlePage} from "./pages/BattlePage/BattlePage";
-import { ServantPage } from "./pages/ServantPage/ServantPage";
+import { RegisterNewUserPage } from "./pages/RegisterNewUserPage";
+import { RegisterNewServantPage } from "./pages/RegisterNewServantPage";
+import { RegisterNewBattlePage } from "./pages/RegisterBattlePage";
+import MyServantsPage from "./pages/MyServantsPage";
+import {BattlePage} from "./pages/BattlePage";
+import { ServantPage } from "./pages/ServantPage";
+import BattlesPage from "./pages/BattlesPage";
+import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
 
 const router = createBrowserRouter([
   { path: "/", element: <LoginPage /> },

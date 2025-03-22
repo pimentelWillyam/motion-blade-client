@@ -21,13 +21,18 @@ export const handleBoardCellClick = async (selectedAction: SelectedAction | null
       selectedServant.battleInfo.verticalPosition = cellLine
       selectedServant.battleInfo.isInBattle = true
       await UpdateServant.execute(selectedServant.name, selectedServant)
+      console.log('servo atualizado: ', selectedServant)
       UpdateBattle.execute(battleName, battle)
       setSelectedAction(null)
       break;
       case null:
         if (selectedServant !== null && selectedServant.name === battle.map[cellLine][cellColumn]) setSelectedServant(null)
         else if (battle.map[cellLine][cellColumn] === '')  setSelectedServant(null)
-        else setSelectedServant(await FetchServantByName.execute(battle.map[cellLine][cellColumn]))
+        else {
+          const res = await FetchServantByName.execute(battle.map[cellLine][cellColumn])
+          console.log(res)
+          setSelectedServant(await FetchServantByName.execute(battle.map[cellLine][cellColumn]))
+    }
       break
     default:
       break;

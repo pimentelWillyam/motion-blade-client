@@ -10,6 +10,7 @@ import { SelectedAction } from '../../types/SelectedAction';
 import { FetchServantByName } from '../../helpers/servantHelpers/FetchServantByName';
 import { FetchBattleByName } from '../../helpers/battleHelpers/FetchBattleByName';
 import { TiUserDelete } from 'react-icons/ti';
+import { HandleRemoveUserFromBattleButtonClick } from '../../handlers/HandleRemoveUserFromBattleButtonClick';
 
 const StyledContainer = styled(Container)`
   display: flex;
@@ -73,17 +74,17 @@ export function ActionButtonGroupCollumn(props: { selectedServant: Servant | nul
       <GiCheckedShield size={'5em'} />
       <GiMailedFist size={'5em'}/>
         <GiHealthIncrease size={'5em'} />
-        <TiUserDelete size={'5em'} />
+        <TiUserDelete size={'5em'} onClick={async () => await HandleRemoveUserFromBattleButtonClick.execute(props.selectedServant as Servant, props.battle as Battle)} />
       </ButtonRow>
       <DPadContainer>
         <div></div>
-        <FaArrowAltCircleUp onClick={async () => HandleArrowClick.execute(await FetchServantByName.execute(props.selectedServant?.name as string), await FetchBattleByName.execute(props.battle?.name as string), 'up')} size={'5em'} />
+        <FaArrowAltCircleUp onClick={async () => HandleArrowClick.execute(props.selectedServant as Servant, await props.battle as Battle, 'up')} size={'5em'} />
         <div></div>
-        <FaArrowAltCircleLeft onClick={async () => HandleArrowClick.execute(await FetchServantByName.execute(props.selectedServant?.name as string), await FetchBattleByName.execute(props.battle?.name as string) as Battle, 'left')} size={'5em'} />
+        <FaArrowAltCircleLeft onClick={async () => HandleArrowClick.execute(props.selectedServant as Servant, await props.battle as Battle, 'left')} size={'5em'} />
         <div></div>
-        <FaArrowAltCircleRight onClick={async () => HandleArrowClick.execute(await FetchServantByName.execute(props.selectedServant?.name as string), await FetchBattleByName.execute(props.battle?.name as string) as Battle, 'right')} size={'5em'} />
+        <FaArrowAltCircleRight onClick={async () => HandleArrowClick.execute(props.selectedServant as Servant, await props.battle as Battle, 'right')} size={'5em'} />
         <div></div>
-        <FaArrowAltCircleDown onClick={async () => HandleArrowClick.execute(await FetchServantByName.execute(props.selectedServant?.name as string), await FetchBattleByName.execute(props.battle?.name as string) as Battle, 'down')} size={'5em'} />
+        <FaArrowAltCircleDown onClick={async () => HandleArrowClick.execute(props.selectedServant as Servant, await props.battle as Battle, 'down')} size={'5em'} />
         <div></div>
       </DPadContainer>
     </ActionButtonGroup>
